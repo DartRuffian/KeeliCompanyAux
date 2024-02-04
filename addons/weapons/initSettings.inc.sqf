@@ -16,6 +16,26 @@
     TRUE
 ] call CBA_fnc_addSetting;
 
+if (ADDON_LOADED(ace_medical)) then {
+    [
+        QGVAR(empCanKnockUnconscious),
+        "CHECKBOX",
+        ["Can knock unconscious", "Whetehr EMP grenades can knock units unconscious."],
+        [QUOTE(MOD_NAME), "EMP"],
+        false,
+        TRUE
+    ] call CBA_fnc_addSetting;
+
+    [
+        QGVAR(empCanKnockUnconsciousPlayers),
+        "CHECKBOX",
+        ["Can knock players unconscious", "Whether players can be knocked unconscious. Does not apply if emp unconscious is disabled. Also applies to remote controlled units (i.e. Zeus controlled)."],
+        [QUOTE(MOD_NAME), "EMP"],
+        false,
+        TRUE
+    ] call CBA_fnc_addSetting;
+};
+
 [
     QGVAR(empTCWSoundEnabled),
     "CHECKBOX",
