@@ -25,8 +25,11 @@ params [
 private ["_radiusDroid", "_radiusDroideka", "_radiusVehicle", "_positionASL", "_positionAGL", "_nearbyPlayers", "_nearbyUnits", "_nearbyVehicles", "_nearbyDroidekas", "_droidekaShields"];
 TRACE_4("fnc_empGrenade",_unit,_ammo,_magazine,_projectile);
 
-if (isNull _unit or isNull _projectile) exitWith {false;};
-if (_ammo isEqualTo "" or _magazine isEqualTo "") exitWith {false;};
+if (isNull _unit or {
+    isNull _projectile or
+    _ammo isEqualTo "" or
+    _magazine isEqualTo ""
+}) exitWith {false;};
 
 _radiusDroid = [
     configFile >> "CfgMagazines" >> _magazine,
@@ -53,15 +56,13 @@ _nearbyPlayers = _nearbyPlayers select {
 };
 {
     [QEGVAR(core,localSound), [
-            QPATHTOF(data\audio\emp\TCW_Explode.wss),
-            "\MRC\JLTS\weapons\Core\sounds\emp_exp\exp_emp_1.wss",
-            _positionASL,
-            QGVAR(empTCWSoundEnabled),
-            QGVAR(empSoundVolume),
-            QGVAR(empSoundPitch)
-        ],
-        _x
-    ] call CBA_fnc_targetEvent;
+        QPATHTOF(data\audio\emp\TCW_Explode.wss),
+        "\MRC\JLTS\weapons\Core\sounds\emp_exp\exp_emp_1.wss",
+        _positionASL,
+        QGVAR(empTCWSoundEnabled),
+        QGVAR(empSoundVolume),
+        QGVAR(empSoundPitch)
+    ], _x] call CBA_fnc_targetEvent;
 } forEach _nearbyPlayers;
 
 _nearbyUnits = [_positionAGL, _radiusDroid] call EFUNC(core,getNearbyUnits);
