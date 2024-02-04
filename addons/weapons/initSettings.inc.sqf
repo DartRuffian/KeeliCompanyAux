@@ -3,7 +3,7 @@
     "SLIDER",
     ["Vehicle Disable Duration", "The time in seconds that a vehicle is disabled for by an emp weapon."],
     [QUOTE(MOD_NAME), "EMP"],
-    [0, 30, 5, 0],
+    [0, 30, 5, FALSE],
     TRUE
 ] call CBA_fnc_addSetting;
 
@@ -18,20 +18,29 @@
 
 if (ADDON_LOADED(ace_medical)) then {
     [
-        QGVAR(empCanKnockUnconscious),
+        QGVAR(empKnockOutEnabled),
         "CHECKBOX",
-        ["Can knock unconscious", "Whetehr EMP grenades can knock units unconscious."],
+        ["Knock Out - Can knock units unconscious", "Whether EMP grenades can knock units unconscious."],
         [QUOTE(MOD_NAME), "EMP"],
-        false,
+        true,
         TRUE
     ] call CBA_fnc_addSetting;
 
     [
-        QGVAR(empCanKnockUnconsciousPlayers),
+        QGVAR(empKnockOutPlayersEnabled),
         "CHECKBOX",
-        ["Can knock players unconscious", "Whether players can be knocked unconscious. Does not apply if emp unconscious is disabled. Also applies to remote controlled units (i.e. Zeus controlled)."],
+        ["Knock Out - Apply to Players", "Whether players or remote controlled units can be knocked unconscious. Does not apply if emp unconscious is disabled."],
         [QUOTE(MOD_NAME), "EMP"],
-        false,
+        true,
+        TRUE
+    ] call CBA_fnc_addSetting;
+
+    [
+        QGVAR(empKnockOutChance),
+        "SLIDER",
+        ["Knock Out - Knock out chance", "Percent chance for a unit or player to be knocked unconscious."],
+        [QUOTE(MOD_NAME), "EMP"],
+        [0, 1, 0.35, TRUE],
         TRUE
     ] call CBA_fnc_addSetting;
 };
@@ -49,7 +58,7 @@ if (ADDON_LOADED(ace_medical)) then {
     "SLIDER",
     ["Sound - Volume", "Volume for the EMP explosion sound."],
     [QUOTE(MOD_NAME), "EMP"],
-    [0, 1, 1, 1]
+    [0, 1, 1, TRUE]
 ] call CBA_fnc_addSetting;
 
 [
@@ -57,7 +66,7 @@ if (ADDON_LOADED(ace_medical)) then {
     "SLIDER",
     ["Sound - Pitch", "Pitch for the EMP explosion sound."],
     [QUOTE(MOD_NAME), "EMP"],
-    [0, 1, 1, 1]
+    [0, 1, 1, TRUE]
 ] call CBA_fnc_addSetting;
 
 if (ADDON_LOADED(CLASS(medical))) then {
@@ -66,7 +75,7 @@ if (ADDON_LOADED(CLASS(medical))) then {
         "SLIDER",
         ["Blood Restore Amount", "Amount of blood given to the patient on each iteration."],
         [QUOTE(MOD_NAME), "Bacta"],
-        [0, 1, 0.25, 0],
+        [0, 1, 0.25, FALSE],
         TRUE
     ] call CBA_fnc_addSetting;
 
@@ -75,7 +84,7 @@ if (ADDON_LOADED(CLASS(medical))) then {
         "SLIDER",
         ["Pain Reduction", "Amount of pain reducted from the patient on each iteration."],
         [QUOTE(MOD_NAME), "Bacta"],
-        [0, 1, 0.1, 0],
+        [0, 1, 0.1, FALSE],
         TRUE
     ] call CBA_fnc_addSetting;
 
