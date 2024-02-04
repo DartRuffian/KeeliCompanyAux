@@ -52,7 +52,7 @@ _positionAGL = ASLToAGL _positionASL;
 
 _nearbyPlayers = [_positionAGL, 70] call EFUNC(core,getNearbyUnits);
 _nearbyPlayers = _nearbyPlayers select {
-    _x call ace_common_fnc_isPlayer
+    _x call ace_common_fnc_isPlayer;
 };
 {
     [QEGVAR(core,localSound), [
@@ -78,5 +78,29 @@ TRACE_5("EMP Grenade",_positionAGL,_nearbyUnits,_nearbyVehicles,_nearbyDroidekas
 [_nearbyUnits, _unit] call FUNC(droidDeathEffect);
 [_nearbyVehicles, GVAR(empVehicleDisableDuration)] call FUNC(disableVehicles);
 [_nearbyDroidekas, _droidekaShields] call FUNC(disableDroidekaShields);
+
+if (GVAR(empKnockOutEnabled)) then {
+    _nearbyUnits = _nearbyUnits select {alive _x};
+    TRACE_1("EMP Knock out enabled",_nearbyUnits);
+
+    if !(GVAR(empKnockOutPlayersEnabled)) then {
+        _nearbyUnits = _nearbyUnits select {
+            !([_x, true] call ace_common_fnc_isPlayer);
+        };
+        TRACE_1("EMP Ignore player and remote controlled units for knock out",_nearbyUnits);
+    };
+
+    {
+        private ["_knockOutChance"];
+        _knockOutChance = random 1;
+
+        INFO_2("EMP Attempting to knock %1 unconscious | Random Num: %2",_x,_knockOutChance);
+        if (!(_x getVariable ["ace_isUnconscious", false]) and {_knockOutChance <= GVAR(empKnockOutChance)}) then {
+            INFO_1("EMP Random chance success, knocking %1 unconscious",_x);
+            [_x, true] call ace_medical_fnc_setUnconscious;
+            ["ace_common_displayTextStructured", ["You were knocked unconscious by an EMP blast.", 1.5], _x] call CBA_fnc_targetEvent;
+        };
+    } forEach _nearbyUnits;
+};
 
 true;
