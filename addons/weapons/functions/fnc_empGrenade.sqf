@@ -97,6 +97,10 @@ if (GVAR(empKnockOutEnabled)) then {
         INFO_2("EMP Attempting to knock %1 unconscious | Random Num: %2",_x,_knockOutChance);
         if (!(_x getVariable ["ace_isUnconscious", false]) and {_knockOutChance <= GVAR(empKnockOutChance)}) then {
             INFO_1("EMP Random chance success, knocking %1 unconscious",_x);
+
+            // If AI unconsciousness is disabled and unit is ai, skip
+            if (!ace_medical_statemachine_AIUnconsciousness and {!([_x, true] call ace_common_fnc_isPlayer)}) then {continue};
+
             [_x, true] call ace_medical_fnc_setUnconscious;
             ["ace_common_displayTextStructured", ["You were knocked unconscious by an EMP blast.", 1.5], _x] call CBA_fnc_targetEvent;
 
