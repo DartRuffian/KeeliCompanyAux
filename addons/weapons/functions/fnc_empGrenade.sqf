@@ -99,6 +99,13 @@ if (GVAR(empKnockOutEnabled)) then {
             INFO_1("EMP Random chance success, knocking %1 unconscious",_x);
             [_x, true] call ace_medical_fnc_setUnconscious;
             ["ace_common_displayTextStructured", ["You were knocked unconscious by an EMP blast.", 1.5], _x] call CBA_fnc_targetEvent;
+
+            [{
+                params ["_unit"];
+                if (_unit getVariable ["ace_isUnconscious", false]) then {
+                    [_unit, false, 0, true] call ace_medical_fnc_setUnconscious;
+                };
+            }, _x, GVAR(empKnockOutTimer)] call CBA_fnc_waitAndExecute;
         };
     } forEach _nearbyUnits;
 };

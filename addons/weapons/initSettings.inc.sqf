@@ -43,6 +43,15 @@ if (ADDON_LOADED(ace_medical)) then {
         [0, 1, 0.35, TRUE],
         TRUE
     ] call CBA_fnc_addSetting;
+
+    [
+        QGVAR(empKnockOutTimer),
+        "SLIDER",
+        ["Knock Out - Knock out length", "Maximum amount of time in seconds a unit will be knocked unconscious for."],
+        [QUOTE(MOD_NAME), "EMP"],
+        [0, 30, 10, FALSE],
+        TRUE
+    ] call CBA_fnc_addSetting;
 };
 
 [
