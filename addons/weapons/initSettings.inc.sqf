@@ -40,7 +40,7 @@ if (ADDON_LOADED(ace_medical)) then {
         "SLIDER",
         ["Knock Out - Knock out chance", "Percent chance for a unit or player to be knocked unconscious."],
         [QUOTE(MOD_NAME), "EMP"],
-        [0, 1, 0.35, TRUE],
+        [0, 1, 0.35, 0, true],
         TRUE
     ] call CBA_fnc_addSetting;
 
