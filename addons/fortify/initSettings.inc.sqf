@@ -50,3 +50,21 @@ _presetDisplayNames insert [0, ["Disabled"]];
     TRUE,
     {call FUNC(registerPreset);}
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(playBuildMusic),
+    "CHECKBOX",
+    ["Build Music", "Plays music when a player is building."],
+    [QUOTE(MOD_NAME), QUOTE(COMPONENT_BEAUTIFIED)],
+    true,
+    TRUE
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(playBuildMusicGlobal),
+    "CHECKBOX",
+    ["Build Music - Is Global", "If enabled, build music will be played for all nearby players."],
+    [QUOTE(MOD_NAME), QUOTE(COMPONENT_BEAUTIFIED)],
+    true,
+    TRUE
+] call CBA_fnc_addSetting;
