@@ -88,7 +88,7 @@ class XtdGearModels {
                 class Mischief { label = "Mischief"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_Tanker_Phase1_Custom): CLASS(Helmets_Phase1_Custom) {
@@ -106,7 +106,7 @@ class XtdGearModels {
                 class Grey { label = "Grey"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_Phase2_Custom): CLASS(Helmets_Phase1_Custom) {
@@ -197,8 +197,9 @@ class XtdGearModels {
                 class Joe { label = "Joe"; };
                 class Keeli { label = "Keeli"; };
 
-                XTDMODELS_CAMO;
             };
+
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_Pilot_Phase2_Custom): CLASS(Helmets_Phase1_Custom) {
@@ -220,7 +221,7 @@ class XtdGearModels {
                 class Mischief { label = "Mischief"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_Tanker_Phase2_Custom): CLASS(Helmets_Phase1_Custom) {
@@ -258,7 +259,7 @@ class XtdGearModels {
                 class Joe { label = "Joe"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_Engineer_Custom): CLASS(Helmets_Phase1_Custom) {
@@ -278,7 +279,7 @@ class XtdGearModels {
                 class Splashdown { label = "Splashdown"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_ARC_Custom): CLASS(Helmets_Phase1_Custom)
@@ -303,7 +304,7 @@ class XtdGearModels {
                 class Tyrant { label = "Tyrant"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_ARF_Custom): CLASS(Helmets_Phase1_Custom) {
@@ -331,7 +332,7 @@ class XtdGearModels {
                 class Tugz { label = "Tugz"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_BARC_Custom): CLASS(Helmets_Phase1_Custom) {
@@ -351,7 +352,7 @@ class XtdGearModels {
                 class Rat { label = "Rat"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Uniforms_Custom): CLASS(Helmets_Phase1_Custom) {
@@ -397,7 +398,7 @@ class XtdGearModels {
                 class Tyrant { label = "Tyrant"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Uniforms_Insulated_Custom): CLASS(Helmets_Phase1_Custom)
@@ -420,7 +421,7 @@ class XtdGearModels {
                 class Keeli { label = "Keeli"; };
             };
 
-            XTDMODELS_CAMO;
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Vests_Custom): CLASS(Helmets_Phase1_Custom)
