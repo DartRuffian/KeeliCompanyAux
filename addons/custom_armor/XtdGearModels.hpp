@@ -373,8 +373,6 @@ class XtdGearModels {
                     "Hagrid",
                     "Joe",
                     "Keeli",
-                    "Keeli_CamoBrown",
-                    "Keeli_CamoGrey",
                     "Rat",
                     "Sin",
                     "Sogi",

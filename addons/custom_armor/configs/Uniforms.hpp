@@ -14,34 +14,30 @@ UNIFORM_CUSTOM(Hagrid);
 UNIFORM_CUSTOM(Joe);
 UNIFORM_CUSTOM(Keeli);
 
-class CLASS(Uniform_Keeli_CamoBrown): CLASS(Uniform_Base)
-{
+class CLASS(Uniform_Keeli_CamoBrown): CLASS(Uniform_Base) {
     displayName = "[KC] Custom Armor ('Keeli') - Brown Camo";
     GVAR(isCustom) = TRUE;
 
-    class ItemInfo: ItemInfo
-    {
+    class ItemInfo: ItemInfo {
         uniformClass = QCLASS(Unit_Keeli_CamoBrown);
     };
-    class XtdGearInfo
-    {
+    class XtdGearInfo {
         model = QCLASS(Uniforms_Custom);
-        camo = "Keeli_CamoBrown";
+        custom = "Keeli";
+        camo = "Brown";
     };
 };
-class CLASS(Uniform_Keeli_CamoGrey): CLASS(Uniform_Base)
-{
+class CLASS(Uniform_Keeli_CamoGrey): CLASS(Uniform_Base) {
     displayName = "[KC] Custom Armor ('Keeli') - Grey Camo";
     GVAR(isCustom) = TRUE;
 
-    class ItemInfo: ItemInfo
-    {
+    class ItemInfo: ItemInfo {
         uniformClass = QCLASS(Unit_Keeli_CamoGrey);
     };
-    class XtdGearInfo
-    {
+    class XtdGearInfo {
         model = QCLASS(Uniforms_Custom);
-        camo = "Keeli_CamoGrey";
+        custom = "Keeli";
+        camo = "Grey";
     };
 };
 
@@ -50,8 +46,7 @@ UNIFORM_CUSTOM(Sin);
 UNIFORM_CUSTOM(Sogi);
 UNIFORM_CUSTOM(Tyrant);
 
-class CLASS(Uniform_Phase2_Insulated_Base): CLASS(Uniform_Base)
-{
+class CLASS(Uniform_Phase2_Insulated_Base): CLASS(Uniform_Base) {
     class ItemInfo;
 };
 UNIFORM_INSULATED_P2_CUSTOM(Dexus);
