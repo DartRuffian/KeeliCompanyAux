@@ -426,7 +426,7 @@ class XtdGearModels {
         class CLASS(Vests_Custom): CLASS(Helmets_Phase1_Custom)
         {
             label = "Custom Vests";
-            options[] = {"custom", "camo"};
+            options[] = {"custom", "style"};
 
             class custom {
                 label = "Custom";
@@ -443,7 +443,20 @@ class XtdGearModels {
                 class Rat { label = "Rat"; };
             };
 
-            XTDMODELS_CAMO;
+            class style {
+                label = "Style";
+                changeInGame = FALSE;
+
+                values[] = {
+                    "Officer",
+                    "Pauldron",
+                    "Kama"
+                };
+
+                class Officer { label = "Officer"; };
+                class Pauldron { label = "Pauldron"; };
+                class Kama { label = "Kama"; };
+            };
         };
     };
 };

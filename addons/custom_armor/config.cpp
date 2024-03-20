@@ -303,4 +303,3 @@ class CfgPatches
 #include "CfgVehicles.hpp"
 #include "CfgEventHandlers.hpp"
 #include "XtdGearModels.hpp"
-#include "XtdGearInfos.hpp"

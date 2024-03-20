@@ -16,21 +16,24 @@ class CfgWeapons
     #include "configs\Uniforms.hpp"
 
     class CLASS(Vest_Commander);
-    class CLASS(Vest_Commander_Keeli): CLASS(Vest_Commander)
-    {
+    class CLASS(Vest_Commander_Keeli): CLASS(Vest_Commander) {
         displayName = "[KC] INF Vest ('Keeli')";
-        hiddenSelectionsTextures[] =
-        {
+        hiddenSelectionsTextures[] = {
             QPATHTOF(data\vests\officer\Keeli_camo1_co.paa),
             ""
         };
 
         GVAR(isCustom) = TRUE;
         class ItemInfo;
+
+        class XtdGearInfo {
+            model = QCLASS(Vests_Custom);
+            custom = "Keeli";
+            style = "Officer";
+        };
     };
 
-    class CLASS(Vest_Kama_Keeli): CLASS(Vest_Commander_Keeli)
-    {
+    class CLASS(Vest_Kama_Keeli): CLASS(Vest_Commander_Keeli) {
         displayName = "[KC] INF Vest (Kama, 'Keeli')";
         model = "\SWLB_CEE\data\SWLB_CEE_Wolffe_Vest.p3d";
         hiddenSelections[] = {"camo1", "camo2"};
@@ -43,38 +46,49 @@ class CfgWeapons
             uniformModel = "\SWLB_CEE\data\SWLB_CEE_Wolffe_Vest.p3d";
             hiddenSelections[] = {"camo1", "camo2"};
         };
+
+        class XtdGearInfo: XtdGearInfo {
+            style = "Kama";
+        };
     };
 
     class CLASS(Vest_Basic);
-    class CLASS(Vest_Officer): CLASS(Vest_Basic)
-    {
+    class CLASS(Vest_Officer): CLASS(Vest_Basic) {
         class ItemInfo;
     };
     class CLASS(Vest_Officer_Ponds): CLASS(Vest_Officer)
     {
         displayName = "[KC] INF Vest ('Ponds')";
-        hiddenSelectionsTextures[] =
-        {
+        hiddenSelectionsTextures[] = {
             QPATHTOF(data\vests\officer\Ponds_camo1_co.paa)
         };
 
         GVAR(isCustom) = TRUE;
 
-        class ItemInfo: ItemInfo
-        {
+        class ItemInfo: ItemInfo {
             containerClass = "Supply250"; // To match medic vests
+        };
+
+        class XtdGearInfo {
+            model = QCLASS(Vests_Custom);
+            custom = "Ponds";
+            style = "Officer";
         };
     };
 
-    class CLASS(Vest_Officer_Rat): CLASS(Vest_Officer)
-    {
+    class CLASS(Vest_Officer_Rat): CLASS(Vest_Officer) {
         displayName = "[KC] INF Vest ('Rat')";
-        hiddenSelectionsTextures[] =
-        {
+        hiddenSelectionsTextures[] = {
             QPATHTOF(data\vests\officer\Rat_camo1_co.paa)
         };
 
         GVAR(isCustom) = TRUE;
+
+        class XtdGearInfo {
+            model = QCLASS(Vests_Custom);
+            custom = "Rat";
+            style = "Officer";
+        };
     };
 
     class CLASS(Vest_Kama_Rat): CLASS(Vest_Officer_Rat)
@@ -91,14 +105,16 @@ class CfgWeapons
             uniformModel = "\SWLB_CEE\data\SWLB_CEE_Wolffe_Vest.p3d";
             hiddenSelections[] = {"camo1", "camo2"};
         };
+
+        class XtdGearInfo: XtdGearInfo {
+            style = "Kama";
+        };
     };
 
     class CLASS(Vest_WO);
-    class CLASS(Vest_WO_Howzer): CLASS(Vest_WO)
-    {
+    class CLASS(Vest_WO_Howzer): CLASS(Vest_WO) {
         displayName = "[KC] INF Vest ('Howzer')";
-        hiddenSelectionsTextures[] =
-        {
+        hiddenSelectionsTextures[] = {
             QPATHTOF(data\vests\officer\Howzer_camo1_co.paa)
         };
 
@@ -106,11 +122,9 @@ class CfgWeapons
     };
 
     class CLASS(NVG_phase2_Officer);
-    class CLASS(NVG_phase2_Officer_Keeli): CLASS(NVG_phase2_Officer)
-    {
+    class CLASS(NVG_phase2_Officer_Keeli): CLASS(NVG_phase2_Officer) {
         displayName = "[KC] Clone P2 Officer Visor ('Keeli')";
-        hiddenSelectionsTextures[] =
-        {
+        hiddenSelectionsTextures[] = {
             QPATHTOF(data\nvgs\Officer_Keeli_camo1_co.paa)
         };
 
