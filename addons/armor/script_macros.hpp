@@ -42,6 +42,18 @@
     }; \
 }
 
+#define P1_PILOT_HELMET(var1,var2) class CLASS(DOUBLES(Helmet_Phase1_Pilot,var1)): CLASS(Helmet_Phase1_Pilot_Base) { \
+    displayName = QUOTE([KC] AVI P1 Helm var2 (##var1##)); \
+    hiddenSelectionsTextures[] = { \
+        QPATHTOF(data\helmets\phase1Pilot\DOUBLES(var1,camo1_co.paa)), \
+        "\ls_armor_bluefor\helmet\gar\phase1Pilot\data\lifesupport_co.paa", \
+        "\ls_armor_bluefor\helmet\gar\phase1Pilot\data\visor_co.paa" \
+    }; \
+    class XtdGearInfo: XtdGearInfo { \
+        rank = QUOTE(var1); \
+    }; \
+}
+
 #define INSULATED_HELMET(var1,var2) class CLASS(DOUBLES(Helmet_Phase2_Insulated,var1)): CLASS(Helmet_Phase2_Insulated_Base) { \
     displayName = QUOTE([KC] INF P2 Insulated Helm var2 (##var1##)); \
     hiddenSelectionsTextures[] = { \

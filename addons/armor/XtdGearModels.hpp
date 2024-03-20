@@ -74,17 +74,16 @@ class XtdGearModels {
             };
         };
 
-        class CLASS(Helmets_Pilot_Phase1)
-        {
+        class CLASS(Helmets_Pilot_Phase1) {
             label = "Pilot Helmets (P1)";
             author = AUTHOR;
-            options[] = {"camo"};
+            options[] = {"rank"};
 
-            class camo
-            {
+            class rank {
+                label = "Rank";
                 changeInGame = FALSE;
-                values[] =
-                {
+                alwaysSelectable = TRUE;
+                values[] = {
                     "Base",
                     "CXA"
                 };
@@ -92,6 +91,8 @@ class XtdGearModels {
                 class Base { label = "Base"; };
                 class CXA { label = "CXA"; };
             };
+
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_Tanker_Phase1)

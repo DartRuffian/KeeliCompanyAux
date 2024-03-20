@@ -33,17 +33,7 @@ class CLASS(Helmet_Phase1Geo_Pilot): CLASS(Helmet_Phase1_Pilot_Base) {
         "\ls_armor_bluefor\helmet\gar\phase1Pilot\data\lifesupport_co.paa",
         "\ls_armor_bluefor\helmet\gar\phase1Pilot\data\visor_co.paa"
     };
+    class XtdGearInfo {};
 };
 
-class CLASS(Helmet_Phase1_Pilot_CXA): CLASS(Helmet_Phase1_Pilot_Base) {
-    displayName = "[KC] AVI P1 Helm 01 (CXA)";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1Pilot\CXA_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1Pilot\data\lifesupport_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1Pilot\data\visor_co.paa"
-    };
-
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CXA";
-    };
-};
+P1_PILOT_HELMET(CXA,01);
