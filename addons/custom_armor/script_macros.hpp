@@ -442,6 +442,17 @@ class CLASS(DOUBLES(Helmet_BARC,var1)##var2): CLASS(DOUBLES(Helmet_BARC,var1)) {
     }; \
 }
 
+#define INSULATED_HELMET_CUSTOM(var1) class CLASS(DOUBLES(Helmet_Phase2_Insulated,var1)): CLASS(Helmet_Phase2_Insulated_Base) { \
+    displayName = QUOTE([KC] INF P2 Insulated Helm ('##var1##')); \
+    hiddenSelectionsTextures[] = { \
+        QPATHTOF(data\helmets\insulated\DOUBLES(var1,camo1_co.paa)) \
+    }; \
+    class XtdGearInfo { \
+        model = QCLASS(Helmets_Insulated_Phase2_Custom); \
+        custom = QUOTE(var1); \
+    }; \
+}
+
 #define UNIFORM_CUSTOM(var1) class CLASS(DOUBLES(Uniform,var1)): CLASS(Uniform_Base) \
 { \
     displayName = QUOTE([KC] Custom Armor ('##var1##')); \
