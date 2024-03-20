@@ -5,8 +5,14 @@
         "Brown", \
         "Grey" \
     }; \
-    class Brown { label = "Brown"; }; \
-    class Grey { label = "Grey"; }; \
+    class Brown { \
+        label = "Brown"; \
+        image = QPATHTOEF(core,data\ui\CamoBrown_co.paa); \
+    }; \
+    class Grey { \
+        label = "Grey"; \
+        image = QPATHTOEF(core,data\ui\CamoGrey_co.paa); \
+    }; \
 }
 
 #define P1_HELMET_CUSTOM(var1) class CLASS(DOUBLES(Helmet_Phase1,var1)): CLASS(Helmet_Phase1_Base) { \
