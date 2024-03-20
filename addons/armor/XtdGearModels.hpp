@@ -188,17 +188,16 @@ class XtdGearModels {
             };
         };
 
-        class CLASS(Helmets_Insulated_Phase2)
-        {
+        class CLASS(Helmets_Insulated_Phase2) {
             label = "Insulated Helmets (P2)";
             author = AUTHOR;
-            options[] = {"camo"};
+            options[] = {"rank"};
 
-            class camo
-            {
+            class rank {
+                label = "Rank";
                 changeInGame = FALSE;
-                values[] =
-                {
+                alwaysSelectable = TRUE;
+                values[] = {
                     "Base",
                     "CT"
                 };

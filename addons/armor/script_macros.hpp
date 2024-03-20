@@ -41,3 +41,13 @@
         camo = QUOTE(var3); \
     }; \
 }
+
+#define INSULATED_HELMET(var1,var2) class CLASS(DOUBLES(Helmet_Phase2_Insulated,var1)): CLASS(Helmet_Phase2_Insulated_Base) { \
+    displayName = QUOTE([KC] INF P2 Insulated Helm var2 (##var1##)); \
+    hiddenSelectionsTextures[] = { \
+        QPATHTOF(data\helmets\insulated\DOUBLES(var1,camo1_co.paa)) \
+    }; \
+    class XtdGearInfo: XtdGearInfo { \
+        rank = QUOTE(var1); \
+    }; \
+}
