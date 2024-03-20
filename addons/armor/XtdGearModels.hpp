@@ -132,7 +132,13 @@ class XtdGearModels {
                     "CSS",
                     "CSFC",
                     "CMS",
-                    "CSM"
+                    "CSM",
+                    "Officer",
+                    "WO",
+                    "WO2",
+                    "WO3",
+                    "CL",
+                    "CL1"
                 };
 
                 class Base { label = "Base"; };

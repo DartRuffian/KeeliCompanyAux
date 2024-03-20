@@ -54,6 +54,29 @@
     }; \
 }
 
+#define P2_HELMET(var1,var2) class CLASS(DOUBLES(Helmet_Phase2,var1)): CLASS(Helmet_Phase2_Base) { \
+    displayName = QUOTE([KC] INF P2 Helm var2 (##var1##)); \
+    hiddenSelectionsTextures[] = { \
+        QPATHTOF(data\helmets\phase2\DOUBLES(var1,camo1_co.paa)), \
+        "\ls_armor_bluefor\helmet\gar\phase2\data\visor_co.paa" \
+    }; \
+    class XtdGearInfo: XtdGearInfo { \
+        rank = QUOTE(var1); \
+    }; \
+}
+
+#define P2_CAMO_HELMET(var1,var2,var3,var4) class CLASS(TRIPLES(Helmet_Phase2,var1,Camo##var3##)): CLASS(Helmet_Phase2_Base) { \
+    displayName = QUOTE([KC] INF P2 Helm var2 (##var1##) - var3 Camo); \
+    hiddenSelectionsTextures[] = { \
+        QPATHTOF(data\helmets\phase2\camo\##var3##\DOUBLES(var1,camo1_co.paa)), \
+        "\ls_armor_bluefor\helmet\gar\phase2\data\visor_co.paa" \
+    }; \
+    class XtdGearInfo: XtdGearInfo { \
+        rank = QUOTE(var4); \
+        camo = QUOTE(var3); \
+    }; \
+}
+
 #define INSULATED_HELMET(var1,var2) class CLASS(DOUBLES(Helmet_Phase2_Insulated,var1)): CLASS(Helmet_Phase2_Insulated_Base) { \
     displayName = QUOTE([KC] INF P2 Insulated Helm var2 (##var1##)); \
     hiddenSelectionsTextures[] = { \
