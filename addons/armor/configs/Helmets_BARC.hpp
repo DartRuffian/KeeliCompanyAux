@@ -1,31 +1,36 @@
-class CLASS(Helmet_BARC_Base): CLASS(Helmet_Base)
-{
+class CLASS(Helmet_BARC_Base): CLASS(Helmet_Base) {
     SCOPE_PUBLIC;
 
     displayName = "[KC] INF BARC Helm (Base)";
 
     model = "\ls_armor_bluefor\helmet\gar\barc\ls_gar_barc_helmet.p3d";
     hiddenSelections[] = {"camo1", "visor"};
-    hiddenSelectionsTextures[] =
-    {
+    hiddenSelectionsTextures[] = {
         "\ls_armor_bluefor\helmet\gar\barc\data\helmet_co.paa",
         "\ls_armor_bluefor\helmet\gar\barc\data\visor_co.paa"
     };
     picture = "\SWLB_clones\data\ui\icon_SWLB_clone_helmet_barc_ca.paa";
 
-    class ItemInfo: ItemInfo
-    {
+    class ItemInfo: ItemInfo {
         hiddenSelections[] = {"camo1", "visor"};
         uniformModel = "\ls_armor_bluefor\helmet\gar\barc\ls_gar_barc_helmet.p3d";
+    };
+
+    class XtdGearInfo {
+        model = QCLASS(Helmets_BARC);
+        rank = "Base";
     };
 };
 
 class CLASS(Helmet_BARC_CT): CLASS(Helmet_BARC_Base)
 {
-    displayName = "[KC] INF BARC Helm 01 (Trooper)";
+    displayName = "[KC] INF BARC Helm 01 (CT)";
     hiddenSelectionsTextures[] =
     {
         QPATHTOF(data\helmets\barc\CT_camo1_co.paa),
         "\ls_armor_bluefor\helmet\gar\barc\data\visor_co.paa"
+    };
+    class XtdGearInfo: XtdGearInfo {
+        rank = "CT";
     };
 };

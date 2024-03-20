@@ -16,3 +16,15 @@
         image = QPATHTOEF(core,data\ui\CamoGrey_co.paa); \
     }; \
 }
+
+#define P1_HELMET(var1,var2) class CLASS(DOUBLES(Helmet_Phase1,var1)): CLASS(Helmet_Phase1_Base) { \
+    displayName = QUOTE([KC] INF P1 Helm var2 (##var1##)); \
+    hiddenSelectionsTextures[] = { \
+        QPATHTOF(data\helmets\phase1\DOUBLES(var1,camo1_co.paa)), \
+        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa", \
+        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa" \
+    }; \
+    class XtdGearInfo: XtdGearInfo { \
+        rank = QUOTE(var1); \
+    }; \
+}

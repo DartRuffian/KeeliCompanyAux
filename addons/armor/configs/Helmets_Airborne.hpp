@@ -1,18 +1,15 @@
-class CLASS(Helmet_Airborne_Base): CLASS(Helmet_Base)
-{
+class CLASS(Helmet_Airborne_Base): CLASS(Helmet_Base) {
     SCOPE_PUBLIC;
 
     displayName = "[KC] AB Helm (Base)";
 
     model = "\lsd_armor_bluefor\helmet\gar\airborne\lsd_gar_airborne_helmet.p3d";
     hiddenSelections[] = {"camo1", "visor"};
-    hiddenSelectionsMaterials[] =
-    {
+    hiddenSelectionsMaterials[] = {
         "\lsd_armor_bluefor\helmet\gar\airborne\data\helmet.rvmat",
         "\lsd_armor_bluefor\helmet\gar\airborne\data\visor.rvmat"
     };
-    hiddenSelectionsTextures[] =
-    {
+    hiddenSelectionsTextures[] = {
         "\lsd_armor_bluefor\helmet\gar\airborne\data\helmet_co.paa",
         "\lsd_armor_bluefor\helmet\gar\airborne\data\visor_co.paa"
     };
@@ -20,26 +17,32 @@ class CLASS(Helmet_Airborne_Base): CLASS(Helmet_Base)
 
     subItems[] = {QCLASS(NVG_Chip)};
 
-    class ItemInfo: ItemInfo
-    {
+    class ItemInfo: ItemInfo {
         hiddenSelections[] = {"camo1", "visor"};
         uniformModel = "\lsd_armor_bluefor\helmet\gar\airborne\lsd_gar_airborne_helmet.p3d";
     };
+
+    class XtdGearInfo {
+        model = QCLASS(Helmets_Airborne);
+        rank = "Base";
+    };
 };
-class CLASS(Helmet_Airborne_CT): CLASS(Helmet_Airborne_Base)
-{
-    displayName = "[KC] AB Helm 01 (Trooper)";
-    hiddenSelectionsTextures[] =
-    {
+class CLASS(Helmet_Airborne_CT): CLASS(Helmet_Airborne_Base) {
+    displayName = "[KC] AB Helm 01 (CT)";
+    hiddenSelectionsTextures[] = {
         QPATHTOF(data\helmets\airborne\CT_camo1_co.paa)
+    };
+    class XtdGearInfo: XtdGearInfo {
+        rank = "CT";
     };
 };
 
-class CLASS(Helmet_Airborne_CT_v2): CLASS(Helmet_Airborne_CT)
-{
-    displayName = "[KC] AB Helm 01 (Trooper, v2)";
-    hiddenSelectionsTextures[] =
-    {
+class CLASS(Helmet_Airborne_CT_v2): CLASS(Helmet_Airborne_CT) {
+    displayName = "[KC] AB Helm 01 (CT, v2)";
+    hiddenSelectionsTextures[] = {
         QPATHTOF(data\helmets\airborne\CT_v2_camo1_co.paa)
+    };
+    class XtdGearInfo: XtdGearInfo {
+        rank = "CT_v2";
     };
 };

@@ -1,18 +1,15 @@
-class XtdGearModels
-{
-    class CfgWeapons
-    {
-        class CLASS(Helmets_Phase1)
-        {
+class XtdGearModels {
+    class CfgWeapons {
+        class CLASS(Helmets_Phase1) {
             label = "Helmets (P1)";
             author = AUTHOR;
-            options[] = {"camo"};
+            options[] = {"rank", "camo"};
 
-            class camo
-            {
+            class rank {
+                label = "Rank";
                 changeInGame = FALSE;
-                values[] =
-                {
+                alwaysSelectable = TRUE;
+                values[] = {
                     "Base",
                     "CR",
                     "CT",
@@ -28,14 +25,7 @@ class XtdGearModels
                     "CSFC",
                     "CMS",
                     "CSM",
-                    "Recruit_CamoBrown",
-                    "Recruit_CamoGrey",
-                    "Enlisted_CamoBrown",
-                    "Enlisted_CamoGrey",
-                    "NCO_CamoBrown",
-                    "NCO_CamoGrey",
-                    "Officer_CamoBrown",
-                    "Officer_CamoGrey"
+                    "WO"
                 };
 
                 class Base { label = "Base"; };
@@ -53,36 +43,30 @@ class XtdGearModels
                 class CSFC { label = "CSFC"; };
                 class CMS { label = "CMS"; };
                 class CSM { label = "CSM"; };
-                class Recruit_CamoBrown { label = "RCT Brown"; };
-                class Recruit_CamoGrey { label = "RCT Grey"; };
-                class Enlisted_CamoBrown { label = "ENL Brown"; };
-                class Enlisted_CamoGrey { label = "ENL Grey"; };
-                class NCO_CamoBrown { label = "NCO Brown"; };
-                class NCO_CamoGrey { label = "NCO Grey"; };
-                class Officer_CamoBrown { label = "OFF Brown"; };
-                class Officer_CamoGrey { label = "OFF Grey"; };
+                class WO { label = "WO"; };
             };
+
+            XTDMODELS_CAMO;
         };
 
-        class CLASS(Helmets_Phase1_Geonosis)
-        {
+        class CLASS(Helmets_Phase1_Geonosis) {
             label = "Helmets (Geonosis)";
             author = AUTHOR;
-            options[] = {"camo"};
+            options[] = {"rank"};
 
-            class camo
-            {
+            class rank {
+                label = "Rank";
                 changeInGame = FALSE;
-                values[] =
-                {
-                    "Trooper",
+                alwaysSelectable = TRUE;
+                values[] = {
+                    "Enlisted",
                     "NCO",
                     "Officer",
                     "Captain",
                     "Commander"
                 };
 
-                class Trooper { label = "Trooper"; };
+                class Enlisted { label = "Enlisted"; };
                 class NCO { label = "NCO"; };
                 class Officer { label = "Officer"; };
                 class Captain { label = "Captain"; };
