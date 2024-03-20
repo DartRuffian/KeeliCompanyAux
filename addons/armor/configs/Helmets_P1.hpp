@@ -44,105 +44,14 @@ P1_HELMET(CMS,09);
 P1_HELMET(CSM,10);
 
 // Camo Helmets
-class CLASS(Helmet_Phase1_Recruit_CamoBrown): CLASS(Helmet_Phase1_Base) {
-    displayName = "[KC] INF P1 Helm 00 (Recruit) - Brown Camo";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1\camo\brown\Recruit_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa"
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CR";
-        camo = "Brown";
-    };
-};
-class CLASS(Helmet_Phase1_Recruit_CamoGrey): CLASS(Helmet_Phase1_Base) {
-    displayName = "[KC] INF P1 Helm 00 (Recruit) - Grey Camo";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1\camo\grey\Recruit_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa"
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CR";
-        camo = "Grey";
-    };
-};
-
-class CLASS(Helmet_Phase1_Enlisted_CamoBrown): CLASS(Helmet_Phase1_Base) {
-    displayName = "[KC] INF P1 Helm 01+ (Enlisted) - Brown Camo";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1\camo\brown\Enlisted_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa"
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CT";
-        camo = "Brown";
-    };
-};
-class CLASS(Helmet_Phase1_Enlisted_CamoGrey): CLASS(Helmet_Phase1_Base) {
-    displayName = "[KC] INF P1 Helm 01+ (Enlisted) - Grey Camo";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1\camo\grey\Enlisted_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa"
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CT";
-        camo = "Grey";
-    };
-};
-
-class CLASS(Helmet_Phase1_NCO_CamoBrown): CLASS(Helmet_Phase1_Base) {
-    displayName = "[KC] INF P1 Helm 06+ (NCO) - Brown Camo";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1\camo\brown\NCO_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa"
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CS";
-        camo = "Brown";
-    };
-};
-class CLASS(Helmet_Phase1_NCO_CamoGrey): CLASS(Helmet_Phase1_Base) {
-    displayName = "[KC] INF P1 Helm 06+ (NCO) - Grey Camo";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1\camo\grey\NCO_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa"
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CS";
-        camo = "Grey";
-    };
-};
-
-class CLASS(Helmet_Phase1_Officer_CamoBrown): CLASS(Helmet_Phase1_Base) {
-    displayName = "[KC] INF P1 Helm 12+ (Officer) - Brown Camo";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1\camo\brown\Officer_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa"
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "WO";
-        camo = "Brown";
-    };
-};
-class CLASS(Helmet_Phase1_Officer_CamoGrey): CLASS(Helmet_Phase1_Base) {
-    displayName = "[KC] INF P1 Helm 12+ (Officer) - Grey Camo";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\phase1\camo\grey\Officer_camo1_co.paa),
-        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa",
-        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa"
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "WO";
-        camo = "Grey";
-    };
-};
+P1_CAMO_HELMET(Recruit,00,Brown,CR);
+P1_CAMO_HELMET(Recruit,00,Grey,CR);
+P1_CAMO_HELMET(Enlisted,01,Brown,CT);
+P1_CAMO_HELMET(Enlisted,01,Grey,CT);
+P1_CAMO_HELMET(NCO,06,Brown,CS);
+P1_CAMO_HELMET(NCO,06,Grey,CS);
+P1_CAMO_HELMET(Officer,12,Brown,WO);
+P1_CAMO_HELMET(Officer,12,Grey,WO);
 
 class CLASS(Helmet_Phase1_ARC_CT): CLASS(Helmet_Phase1_Base) {
     displayName = "[KC] SF ARC P1 Helm 01 (CT)";

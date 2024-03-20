@@ -28,3 +28,16 @@
         rank = QUOTE(var1); \
     }; \
 }
+
+#define P1_CAMO_HELMET(var1,var2,var3,var4) class CLASS(TRIPLES(Helmet_Phase1,var1,Camo##var3##)): CLASS(Helmet_Phase1_Base) { \
+    displayName = QUOTE([KC] INF P1 Helm var2 (##var1##) - var3 Camo); \
+    hiddenSelectionsTextures[] = { \
+        QPATHTOF(data\helmets\phase1\camo\##var3##\DOUBLES(var1,camo1_co.paa)), \
+        "\ls_armor_bluefor\helmet\gar\phase1\data\visor_co.paa", \
+        "\ls_armor_bluefor\helmet\gar\phase1\data\illum_co.paa" \
+    }; \
+    class XtdGearInfo: XtdGearInfo { \
+        rank = QUOTE(var4); \
+        camo = QUOTE(var3); \
+    }; \
+}
