@@ -352,30 +352,28 @@ class XtdGearModels {
             };
         };
 
-        class CLASS(Helmets_ARF)
-        {
+        class CLASS(Helmets_ARF) {
             label = "ARF Helmets";
             author = AUTHOR;
-            options[] = {"camo"};
+            options[] = {"rank", "camo"};
 
-            class camo
-            {
+            class rank {
+                label = "Rank";
                 changeInGame = FALSE;
+                alwaysSelectable = TRUE;
                 values[] =
                 {
                     "Base",
                     "CT",
-                    "CT_Legacy",
-                    "Enlisted_CamoBrown",
-                    "Enlisted_CamoGrey"
+                    "CT_Legacy"
                 };
 
                 class Base { label = "Base"; };
                 class CT { label = "CT"; };
                 class CT_Legacy { label = "CT (Legacy)"; };
-                class Enlisted_CamoBrown { label = "ENL Brown"; };
-                class Enlisted_CamoGrey { label = "ENL Grey"; };
             };
+
+            XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_BARC)
