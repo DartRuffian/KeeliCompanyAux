@@ -291,7 +291,7 @@ class XtdGearModels {
 
         class CLASS(Helmets_ARF_Custom): CLASS(Helmets_Phase1_Custom) {
             label = "Custom ARF Helmets";
-            options[] = {"custom", "camo"};
+            options[] = {"custom"};
 
             class custom {
                 label = "Custom";
