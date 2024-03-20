@@ -260,17 +260,16 @@ class XtdGearModels {
             };
         };
 
-        class CLASS(Helmets_Airborne)
-        {
+        class CLASS(Helmets_Airborne) {
             label = "Airborne Helmets";
             author = AUTHOR;
-            options[] = {"camo"};
+            options[] = {"rank"};
 
-            class camo
-            {
-                changeInGame = FALSE; // Can be changed from ACE interact
-                values[] =
-                {
+            class rank {
+                label = "Rank";
+                changeInGame = FALSE;
+                alwaysSelectable = TRUE;
+                values[] = {
                     "Base",
                     "CT",
                     "CT_v2"
@@ -280,6 +279,8 @@ class XtdGearModels {
                 class CT { label = "CT"; };
                 class CT_v2 { label = "CT v2"; };
             };
+
+            // XTDMODELS_CAMO;
         };
 
         class CLASS(Helmets_Engineer)

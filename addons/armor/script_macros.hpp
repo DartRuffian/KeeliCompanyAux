@@ -63,3 +63,14 @@
         rank = QUOTE(var1); \
     }; \
 }
+
+#define AIRBORNE_HELMET(var1,var2) class CLASS(DOUBLES(Helmet_Airborne,var1)): CLASS(Helmet_Airborne_Base) { \
+    displayName = QUOTE([KC] AB Helm var2 (##var1##)); \
+    hiddenSelectionsTextures[] = { \
+        QPATHTOF(data\helmets\airborne\DOUBLES(var1,camo1_co.paa)), \
+        "\lsd_armor_bluefor\helmet\gar\airborne\data\visor_co.paa" \
+    }; \
+    class XtdGearInfo: XtdGearInfo { \
+        rank = QUOTE(var1); \
+    }; \
+}

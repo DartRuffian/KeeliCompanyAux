@@ -5,10 +5,6 @@ class CLASS(Helmet_Airborne_Base): CLASS(Helmet_Base) {
 
     model = "\lsd_armor_bluefor\helmet\gar\airborne\lsd_gar_airborne_helmet.p3d";
     hiddenSelections[] = {"camo1", "visor"};
-    hiddenSelectionsMaterials[] = {
-        "\lsd_armor_bluefor\helmet\gar\airborne\data\helmet.rvmat",
-        "\lsd_armor_bluefor\helmet\gar\airborne\data\visor.rvmat"
-    };
     hiddenSelectionsTextures[] = {
         "\lsd_armor_bluefor\helmet\gar\airborne\data\helmet_co.paa",
         "\lsd_armor_bluefor\helmet\gar\airborne\data\visor_co.paa"
@@ -27,22 +23,5 @@ class CLASS(Helmet_Airborne_Base): CLASS(Helmet_Base) {
         rank = "Base";
     };
 };
-class CLASS(Helmet_Airborne_CT): CLASS(Helmet_Airborne_Base) {
-    displayName = "[KC] AB Helm 01 (CT)";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\airborne\CT_camo1_co.paa)
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CT";
-    };
-};
-
-class CLASS(Helmet_Airborne_CT_v2): CLASS(Helmet_Airborne_CT) {
-    displayName = "[KC] AB Helm 01 (CT, v2)";
-    hiddenSelectionsTextures[] = {
-        QPATHTOF(data\helmets\airborne\CT_v2_camo1_co.paa)
-    };
-    class XtdGearInfo: XtdGearInfo {
-        rank = "CT_v2";
-    };
-};
+AIRBORNE_HELMET(CT,01);
+AIRBORNE_HELMET(CT_v2,01);
