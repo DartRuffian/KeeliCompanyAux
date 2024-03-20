@@ -307,33 +307,48 @@ class XtdGearModels {
             };
         };
 
-        class CLASS(Helmets_ARC)
-        {
+        class CLASS(Helmets_ARC) {
             label = "ARC Helmets";
             author = AUTHOR;
-            options[] = {"camo"};
+            options[] = {"rank", "camo"};
 
-            class camo
-            {
+            class rank {
+                label = "Rank";
                 changeInGame = FALSE;
-                values[] =
-                {
+                alwaysSelectable = TRUE;
+                values[] = {
                     "Base",
                     "CT",
                     "CT_Legacy",
-                    "NightShade",
-                    "Enlisted_CamoBrown",
-                    "Enlisted_CamoGrey",
-                    "Enlisted_CamoNight"
+                    "NightShade"
                 };
 
                 class Base { label = "Base"; };
                 class CT { label = "CT"; };
                 class CT_Legacy { label = "CT (Legacy)"; };
                 class NightShade { label = "NightShade"; };
-                class Enlisted_CamoBrown { label = "ENL Brown"; };
-                class Enlisted_CamoGrey { label = "ENL Grey"; };
-                class Enlisted_CamoNight { label = "ENL Night"; };
+            };
+
+            class camo {
+                label = "Camo";
+                changeInGame = FALSE;
+                values[] = {
+                    "Brown",
+                    "Grey",
+                    "Night"
+                };
+                class Brown {
+                    label = "Brown";
+                    image = QPATHTOEF(core,data\ui\CamoBrown_co.paa);
+                };
+                class Grey {
+                    label = "Grey";
+                    image = QPATHTOEF(core,data\ui\CamoGrey_co.paa);
+                };
+                class Night {
+                    label = "Night";
+                    image = "#(rgb,8,8,3)color(0.145,0.141,0.145,1)";
+                };
             };
         };
 

@@ -61,7 +61,7 @@ class CLASS(Helmet_ARC_NightShade): CLASS(Helmet_ARC_Base) {
         "\lsd_armor_bluefor\helmet\gar\arc\data\helmet_co.paa",
     };
     class XtdGearInfo: XtdGearInfo {
-        camo = "NightShade";
+        rank = "NightShade";
     };
 };
 

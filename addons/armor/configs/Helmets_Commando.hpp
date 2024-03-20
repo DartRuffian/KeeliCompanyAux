@@ -14,4 +14,6 @@ class CLASS(Helmet_Commando_Base): CLASS(Helmet_ARC_Base) {
         hiddenSelections[] = {"illum", "camo1"};
         uniformModel = "\ls_armor_bluefor\helmet\sob\commando\lsd_sob_commando_helmet.p3d";
     };
+
+    class XtdGearInfo {};
 };
