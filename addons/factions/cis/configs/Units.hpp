@@ -488,8 +488,8 @@ class CLASS(CIS_Unit_Droid_B2): CLASS(CIS_Unit_Droid_Base) {
     model = "\lsd_armor_redfor\uniform\cis\b2\lsd_cis_b2_uniform";
     hiddenSelections[] = {"camo_arms", "legs", "torso"};
     hiddenSelectionsTextures[] = {
-        "\lsd_armor_redfor\uniform\cis\b2\data\arms_co.paa",
-        "\lsd_armor_redfor\uniform\cis\b2\data\legs_co.paa",
+        QPATHTOF(cis\data\textures\uniform\b2\arms_co.paa),
+        QPATHTOF(cis\data\textures\uniform\b2\legs_co.paa),
         QPATHTOF(cis\data\textures\uniform\b2\torso_co.paa)
     };
 
@@ -501,14 +501,50 @@ class CLASS(CIS_Unit_Droid_B2): CLASS(CIS_Unit_Droid_Base) {
     };
 
     magazines[] = {
-        ITEM_5(QCLASS(Mag_60rnd_B2Blaster))
+        ITEM_5(QCLASS(Mag_60rnd_B2Blaster)),
+        QCLASS(Mag_3rnd_B2Blaster_rocket)
     };
     respawnMagazines[] = {
-        ITEM_5(QCLASS(Mag_60rnd_B2Blaster))
+        ITEM_5(QCLASS(Mag_60rnd_B2Blaster)),
+        QCLASS(Mag_3rnd_B2Blaster_rocket)
     };
 
     linkedItems[] = {"JLTS_NVG_droid_chip_1", DROID_LINKED_ITEMS};
     respawnLinkedItems[] = {"JLTS_NVG_droid_chip_1", DROID_LINKED_ITEMS};
+};
+
+class CLASS(CIS_Unit_Droid_B2_RocketLauncher): CLASS(CIS_Unit_Droid_B2) {
+    displayName = "B2-HA Super Battle Droid";
+    weapons[] = {
+        QCLASS(B2Blaster_rocket)
+    };
+    respawnWeapons[] = {
+        QCLASS(B2Blaster_rocket)
+    };
+
+    magazines[] = {
+        ITEM_5(QCLASS(Mag_3rnd_B2Blaster_rocket))
+    };
+    respawnMagazines[] = {
+        ITEM_5(QCLASS(Mag_3rnd_B2Blaster_rocket))
+    };
+};
+
+class CLASS(CIS_Unit_Droid_B2_Grenadier): CLASS(CIS_Unit_Droid_B2) {
+    displayName = "B2-GRN Super Battle Droid";
+    weapons[] = {
+        QCLASS(B2Blaster_grenadeLauncher)
+    };
+    respawnWeapons[] = {
+        QCLASS(B2Blaster_grenadeLauncher)
+    };
+
+    magazines[] = {
+        ITEM_5(QCLASS(Mag_3rnd_B2Blaster_grenadeLauncher))
+    };
+    respawnMagazines[] = {
+        ITEM_5(QCLASS(Mag_3rnd_B2Blaster_grenadeLauncher))
+    };
 };
 
 class CLASS(CIS_Unit_Droid_B2_Jetpack): CLASS(CIS_Unit_Droid_B2) {
