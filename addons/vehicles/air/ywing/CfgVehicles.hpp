@@ -6,6 +6,13 @@ class CfgVehicles {
         class Turrets {
             class BubbleGun;
         };
+        class Components: Components {
+            class TransportPylonsComponent {
+                class Pylons {
+                    class pylons1;
+                };
+            };
+        };
         class PilotCamera;
     };
     class CLASS(BTLB_YWing): BTL_Base {
@@ -20,19 +27,26 @@ class CfgVehicles {
         crew = QCLASS(Unit_Phase2_CXA);
         typicalCargo[] = {QCLASS(Unit_Phase2_CXA)};
 
-        weapons[] = {QCLASS(Cannon_YWing), "ls_weapon_CMFlareLauncher", "Laserdesignator_pilotCamera"};
+        weapons[] = {
+            QCLASS(Cannon_YWing),
+            QCLASS(Bomb_ProtonBombLauncher),
+            "ls_weapon_CMFlareLauncher",
+            "Laserdesignator_pilotCamera"
+        };
         magazines[] = {
             "3AS_BTLB_450Rnd_Heavy_Shells",
             "3AS_BTLB_450Rnd_Heavy_Shells",
+            QCLASS(Mag_8Rnd_Bomb_Proton),
+            QCLASS(Mag_8Rnd_Bomb_Proton),
             "ls_mag_240Rnd_CMFlareChaff_blue",
             "ls_mag_240Rnd_CMFlareChaff_blue",
             "Laserbatteries"
         };
 
         hiddenselectionstextures[] = {
-            "\3as\3AS_btlb\textures\chasis_shadow_co.paa",
-            "\3as\3AS_btlb\data\detail_co.paa",
-            "\3as\3AS_btlb\data\interior_co.paa"
+            "\3AS\3AS_BTLB\textures\chasis_shadow_co.paa",
+            "\3AS\3AS_BTLB\data\detail_co.paa",
+            "\3AS\3AS_BTLB\data\interior_co.paa"
         };
 
         textureList[] = {"Standard", 1, "StandardLeader", 0};
@@ -42,17 +56,17 @@ class CfgVehicles {
                 displayName = "Standard";
                 factions[] = {};
                 textures[] = {
-                    "\3as\3AS_btlb\textures\chasis_shadow_co.paa",
-                    "\3as\3AS_btlb\data\detail_co.paa",
-                    "\3as\3AS_btlb\data\interior_co.paa"
+                    "\3AS\3AS_BTLB\textures\chasis_shadow_co.paa",
+                    "\3AS\3AS_BTLB\data\detail_co.paa",
+                    "\3AS\3AS_BTLB\data\interior_co.paa"
                 };
             };
             class StandardLeader: Standard {
                 displayName = "Standard Leader";
                 textures[] = {
-                    "\3as\3AS_btlb\textures\chasis_shadowleader_co.paa",
-                    "\3as\3AS_btlb\data\detail_co.paa",
-                    "\3as\3AS_btlb\data\interior_co.paa"
+                    "\3AS\3AS_BTLB\textures\chasis_shadowleader_co.paa",
+                    "\3AS\3AS_BTLB\data\detail_co.paa",
+                    "\3AS\3AS_BTLB\data\interior_co.paa"
                 };
             };
         };
@@ -64,6 +78,46 @@ class CfgVehicles {
         class Turrets: Turrets {
             class BubbleGun: BubbleGun {
                 gunnerName = "Gunner";
+            };
+        };
+
+        class Components: Components {
+            class TransportPylonsComponent: TransportPylonsComponent {
+                uiPicture = QPATHTOF(air\ywing\data\ui\BTLB_YWing_pylons_ca.paa);
+
+                class Pylons: Pylons {
+                    class pylons1: pylons1 {
+                        // attachment = "PylonRack_Missile_AMRAAM_D_x1";
+                        hardpoints[] = {"SCALPEL_1RND", "B_ASRAAM", "B_AMRAAM_D", "B_AMRAAM_D_RAIL", "DAR", "DAGR", "B_GBU12", "B_AGM65_RAIL", "20MM_TWIN_CANNON", "B_MISSILE_PYLON", "B_BOMB_PYLON", "ARC_EMP_RAIL", "B_SDB_QUAD_RAIL", "B_BIM9X_RAIL", "B_AGM65_DUAL_RAIL", "B_HARM_RAIL", "ARC_AGM_PYLON"};
+                        maxweight = 5000;
+                        uiPosition[] = {0.15, 0.25};
+                    };
+                    class pylons2: pylons1 {
+                        mirroredMissilePos = 1;
+                        uiPosition[] = {0.5, 0.25};
+                    };
+                    class pylons3: pylons1 {
+                        uiPosition[] = {0.1, 0.35};
+                    };
+                    class pylons4: pylons3 {
+                        mirroredMissilePos = 3;
+                        uiPosition[] = {0.55, 0.35};
+                    };
+                    class pylons5: pylons1 {
+                        uiPosition[] = {0.05, 0.45};
+                    };
+                    class pylons6: pylons5 {
+                        mirroredMissilePos = 3;
+                        uiPosition[] = {0.6, 0.45};
+                    };
+                    class pylons7: pylons1 {
+                        uiPosition[] = {0.2, 0.4};
+                    };
+                    class pylons8: pylons7 {
+                        mirroredMissilePos = 7;
+                        uiPosition[] = {0.45, 0.4};
+                    };
+                };
             };
         };
 

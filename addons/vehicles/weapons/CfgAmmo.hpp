@@ -116,9 +116,18 @@ class CfgAmmo {
 
     class SmokeShellArty;
     class CLASS(Shell_Mortar_SmokeBlue_Submunition): SmokeShellArty {
-        effectsSmoke = QCLASS(Effects_Mortar_SmokeShellBlue);
+        effectsSmoke = QCLASS(Effect_Mortar_SmokeShellBlue);
     };
     class CLASS(Shell_Mortar_SmokeRed_Submunition): SmokeShellArty {
-        effectsSmoke = QCLASS(Effects_Mortar_SmokeShellRed);
+        effectsSmoke = QCLASS(Effect_Mortar_SmokeShellRed);
+    };
+
+
+    class Bo_GBU12_LGB;
+    class CLASS(Bomb_Proton): Bo_GBU12_LGB {
+        effectsMissile = QCLASS(Effect_E60_Fly);
+
+        thrust = 1;
+        thrustTime = 100;
     };
 };
